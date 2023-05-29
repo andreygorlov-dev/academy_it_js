@@ -171,4 +171,36 @@ console.log("============================================");
 
 let str = "Hello world";
 
-console.log([...str])
+console.log([...str]);
+
+console.log("============================================");
+//Объекты как коллекция
+
+str = "Hello";
+
+let str2 = str;
+
+str = "bye";
+console.log(str + " " + str2);
+
+console.log("============================================");
+
+let user = {
+    lastName: "Вася",
+    firstName: "Кузнецов",
+    role: {
+        canEdit: true,
+        canView: true
+    }
+};
+
+let user2 = {};
+for (let key in user) {
+    user2[key] = user[key];
+}
+
+console.log(user);
+user2.firstName = "Коля";
+console.log(user2);
+
+//Object.assign(); //1. целевой объект 2. остальные аргументы
