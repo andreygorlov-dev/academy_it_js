@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+
+        <input type = "button" value = "click"  id = "elem">
+        
+        <div id = "divElem">Привет мир!!!</div>
+        <script>
+            elem.addEventListener("click", divRule);
+
+            function divRule() {
+                if (divElem.style.display == "none") {
+                    divElem.style.display = "block";
+                } else {
+                    divElem.style.display = "none";
+                }
+            }
+           
+        </script>
+    </body>
+</html>

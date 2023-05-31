@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <script type = "text/javascript" src = "script.js"></script>
+    </head>
+    <body>
+
+        <input type = "button" value = "Hello"  id = "elem">
+        
+        <script>
+            
+            // elem.onclick = function() {
+            //     alert('Hello');
+            // };
+
+            elem.addEventListener("click", sayHello);
+            elem.addEventListener("click", sayBye);
+
+            function sayHello() {
+                alert('Hello');
+            }
+
+            function sayBye() {
+                alert('Bye');
+            }
+            //document.body.style.background = "green";
+            //
+            //setTimeout(() => document.body.style.background = "", 1000);
+//
+            //document.body.myData = {
+            //    firstName: "Вася",
+            //    lastName: "Иванов"
+            //};
+            //alert(document.body.myData.lastName);
+            //
+            //document.body.seyHello = function() {
+            //    alert("Hello world");
+            //}
+//
+            //document.body.seyHello();
+        </script>
+    </body>
+</html>
