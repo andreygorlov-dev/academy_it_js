@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        
+        <script>
+            let promise = new Promise(function(resolve, reject) {
+                //setTimeout(() => resolve("done"), 1000);
+                setTimeout(() => reject(new Error("Упс... все плохо=(")), 1000);
+
+                // resolve(value) - успешное завершение работы, результат value\
+                // reject(error) - если произошла какая то ошибка, error-объект ошибки
+
+                // state (состояние) - pending (ожидание)/fulfilled|rejected
+                // result (результат) - undefined => value  
+            });
+        </script>
+    </body>
+</html>

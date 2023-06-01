@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <div class="pane">
+            <h3>Текст</h3>
+            <p>Текст текст текст</p>
+        </div>
+        <div class="pane">
+            <h3>Текст2</h3>
+            <p>Текст2 текст2 текст2</p>
+        </div>
+        <!--<script>
+            let elements = document.getElementsByClassName("pane");
+            for (let elem of elements) {
+                let button = document.createElement("button");
+                button.innerHTML = "Click Me";
+                elem.prepend(button);
+                button.addEventListener("click", function() {
+                    let el = this.parentNode.children[2];
+                    el.style.display = 'none';
+                    this.style.display = 'none';
+                });
+                elem.children[1].addEventListener('click', function() {
+                    let el = this.parentNode.children[2];
+                    el.style.display = 'block';
+                    this.parentNode.children[0].style.display = 'block';
+                });
+            }
+        </script>-->
+        <script>
+            let panes = document.querySelectorAll(".pane");
+            for(let pane of panes) {
+                pane.insertAdjacentHTML("afterbegin", "<button class='closed'>[X]</button>");//1 position: beforebegin(перед открывающимся тегом)/afterbegin(после открывающегося тега)/beforeend(перед закрывающим тегом)/afterend(после закрывающегося тега). 2.html
+                pane.firstChild.onclick = () => pane.remove();
+            }
+        </script>
+    </body>
+</html>

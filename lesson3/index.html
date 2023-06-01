@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+
+        <div id="div">Click Me</div>
+        <script>
+            //elem.removeEventListener('click', divRule);//отвязать событие. 1.Событие 2.Метод
+            let div = document.getElementById('div');
+            let fun = function() {
+                alert("hello world");
+            }
+            div.addEventListener('click', fun);
+
+            div.removeEventListener('click', fun);
+        </script>
+    </body>
+</html>

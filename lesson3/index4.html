@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <table border = 1 id = "table">
+            <tr>
+                <td>11111</td>
+                <td>11111</td>
+                <td>11111</td>
+                <td>11111</td>
+            </tr>
+            <tr>
+                <td>11111 <b>2222</b></td>
+                <td>11111</td>
+                <td>11111</td>
+                <td>11111</td>
+            </tr>
+            <tr>
+                <td>11111</td>
+                <td>11111</td>
+                <td>11111</td>
+                <td>11111</td>
+            </tr>
+            <tr>
+                <td>11111</td>
+                <td>11111</td>
+                <td>11111</td>
+                <td>11111</td>
+            </tr>
+        </table>
+        <script>
+            let selTd;
+            table.onclick = function(event) {
+                let target = event.target.closest('td');//Ближайший предок
+
+                if (!target) {
+                    return;
+                }
+
+                target.style.background = "red";
+            }
+        </script>
+    </body>
+</html>

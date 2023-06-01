@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        Счетчик1: <input type="button" value="1" data-counter>
+        Счетчик2: <input type="button" value="1" data-counter>
+        Счетчик3: <input type="button" value="1" data-counter>
+        Счетчик4: <input type="button" value="1" data-counter>
+
+        <script>
+            document.addEventListener('click', function(event) {
+                if (event.target.dataset.counter != undefined) {
+                    event.target.value++;
+                }
+            });
+        </script>
+    </body>
+</html>
