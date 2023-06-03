@@ -1,4 +1,72 @@
-<!--Двигать мячь по полю нажатием курсора мыши, передвижени плавно. 
-    Курсор всегда должен быть в центре мяча.
-    Мячь не должен уходить за границы поля
--->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+
+      div {
+        border: solid;
+        border-width: 20px;
+        border-color: #000;
+        width: 600px;
+        height: 500px;
+        background: #008000;
+      }
+
+      img {
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div id = "field"></div>
+
+    <script type="text/javascript">
+
+        let ball = document.createElement("img");
+        let borderFieldSize = parseInt(window.getComputedStyle(field).borderWidth);
+
+        ball.setAttribute("src", "ball.png");
+        field.append(ball);
+
+        let deg = 0;
+
+        let size = ball.offsetWidth;
+        ball.style.left = field.getBoundingClientRect().left + borderFieldSize  + "px";
+        ball.style.top = field.getBoundingClientRect().top + borderFieldSize  + "px";
+
+        field.addEventListener('click', function(event) {
+            
+            deg += 360;
+
+            ball.style.transform = `rotate(${deg}deg)`;
+
+            ball.style.left = getPosition(event.clientX, field.getBoundingClientRect().left, field.offsetWidth);
+            ball.style.top  = getPosition(event.clientY, field.getBoundingClientRect().top, field.offsetHeight);
+            
+
+        });
+
+        document.addEventListener("scroll", function(event) {
+
+        });
+
+        function getPosition(pointCoord, startPoint, length) {
+            if (pointCoord < borderFieldSize + startPoint + size / 2) {
+                return borderFieldSize + startPoint + "px";
+            } else if (pointCoord > startPoint + length - borderFieldSize - size / 2) {
+                return startPoint + length - borderFieldSize - size + "px";
+            } 
+            
+            return pointCoord - size / 2 + "px";
+        }
+    </script>
+  </body>
+</html>
