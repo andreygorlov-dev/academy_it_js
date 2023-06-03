@@ -25,7 +25,6 @@
     </style>
   </head>
   <body>
-
     <div id = "field"></div>
 
     <script type="text/javascript">
@@ -39,33 +38,30 @@
         let deg = 0;
 
         let size = ball.offsetWidth;
-        ball.style.left = field.getBoundingClientRect().left + borderFieldSize  + "px";
-        ball.style.top = field.getBoundingClientRect().top + borderFieldSize  + "px";
+        setPosition(field.getBoundingClientRect().top + borderFieldSize, field.getBoundingClientRect().left + borderFieldSize);
 
         field.addEventListener('click', function(event) {
-            
-            deg += 360;
-
+            deg += Math.sqrt(Math.pow(event.clientX - parseInt(ball.style.left) + size / 2, 2) + Math.pow(event.clientY - parseInt(ball.style.top) + size / 2, 2)) * 2;
             ball.style.transform = `rotate(${deg}deg)`;
-
-            ball.style.left = getPosition(event.clientX, field.getBoundingClientRect().left, field.offsetWidth);
-            ball.style.top  = getPosition(event.clientY, field.getBoundingClientRect().top, field.offsetHeight);
             
+            setPosition(getPosition(event.clientX, field.getBoundingClientRect().left, field.offsetWidth), 
+                        getPosition(event.clientY, field.getBoundingClientRect().top, field.offsetHeight));
 
         });
 
-        document.addEventListener("scroll", function(event) {
-
-        });
+        function setPosition(x, y) {
+            ball.style.left = x + "px";
+            ball.style.top = y + "px";
+        }
 
         function getPosition(pointCoord, startPoint, length) {
             if (pointCoord < borderFieldSize + startPoint + size / 2) {
-                return borderFieldSize + startPoint + "px";
+                return borderFieldSize + startPoint;
             } else if (pointCoord > startPoint + length - borderFieldSize - size / 2) {
-                return startPoint + length - borderFieldSize - size + "px";
+                return startPoint + length - borderFieldSize - size;
             } 
             
-            return pointCoord - size / 2 + "px";
+            return pointCoord - size / 2;
         }
     </script>
   </body>
