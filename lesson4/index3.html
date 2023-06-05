@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <button>Кнопка</button>
+
+        <div id = "progress"></div>
+        <script>
+
+            // queueMicrotask(function() {}); // Добавляет функцию очередь
+
+            // setTimeout(() => alert("timeout"));
+            
+            // Promise.resolve().then(() => alert("promise"));
+
+            // alert("alert");
+
+            // await 
+            // async
+
+            // async function test() {
+            //     return 1;
+            // }
+
+            // test().then(alert);
+
+            async function test2() {
+                let promise = new Promise(function(resolve, reject) {
+                    setTimeout(() => resolve("Done!"), 3000);
+                })
+                let res = await promise; // Задержка до выполнения
+                
+                alert(res);
+            }
+
+
+            test2();
+
+        </script>
+    </body>
+</html>

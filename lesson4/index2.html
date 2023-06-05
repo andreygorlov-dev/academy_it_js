@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <button>Кнопка</button>
+
+        <div id = "progress"></div>
+        <script>
+//             let i = 0;
+//             let start = Date.now();
+
+//             function test() {
+//                 // for (let j = 0; j < 1e9; j++) {
+//                 //     i++;
+//                 // }
+//                 // alert("Все посчитано за " + (Date.now() - start) + 'мс');
+
+
+//                 //do {
+//                 //    i++
+//                 //} while (i % 1e6 != 0);
+// //
+//                 //if (i === 1e9) {
+//                 //    alert("Все посчитано за " + (Date.now() - start) + 'мс');
+//                 //} else {
+//                 //    setTimeout(test);
+//                 //}
+//             }
+
+            //test();
+
+            let i = 0;
+
+            function test() {
+                do {
+                    i++;
+                    progress.innerHTML = i;
+                } while(i % 1e3 !==0);
+
+                if (i < 1e7) {
+                    setTimeout(test);
+                }
+            }
+
+            test();
+        </script>
+    </body>
+</html>
