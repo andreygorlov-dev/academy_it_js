@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <form id = "myForm">
+            <input type = "text" name = "firstname" value = "Вася">
+            <input type = "text" name = "lastname" value = "Иванов">
+            <input type = "submit">
+        </form>
+        <script>
+            //FormData
+            // let form = document.getElementById("myForm");
+            // form.onsubmit = async (e) => {
+            //     e.preventDefault();
+
+            //     let response = await fetch ('<url>', {
+            //         method: 'POST',
+            //         body: new FormData(form)
+            //     });
+
+            //     let result = await reponset.json();
+
+            //     console.log(respose);
+            // }
+            // formData.append(name, value) - Добавляет элемент в объект
+            // fomData.delete(name) - удаляет элемент 
+            // formData.get(name) - получает содержимое элемента
+            // formData.has(name) - существует ли поле с таким name
+            // formData.set(name, value) - добавляет уникальное значение name, удаляя предыдущие
+
+
+            // let formData = new FormData();
+// 
+            // formData.append("firstname", "HelloWorld");
+// 
+            // for (let [name, value] of formData) {
+                // console.log(name + " = " + value);
+            // }
+        </script>
+    </body>
+</html>

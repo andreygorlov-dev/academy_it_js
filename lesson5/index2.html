@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <script>
+            function getInfo(users) {
+                let usersResponse = [];
+                for (let user of users) {
+                    let promise = fetch('https://api.github.com/users/' + user).then(
+                        successRequest => {
+                            if (successRequest.status !== 200) {
+                                return null
+                            } else {
+                                return successRequest.json();
+                            }
+                        }
+                    );
+                    usersResponse.push(promise);
+                }
+                return usersResponse;
+            }
+
+            let arr = ["kewa2008", "andreygorlov-dev"];
+
+            let results = getInfo(arr);
+
+            for (let res of results) {
+                res.then(success => console.log(success));
+            }
+        </script>
+    </body>
+</html>

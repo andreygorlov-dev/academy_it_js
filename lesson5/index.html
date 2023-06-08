@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <script>
+            async function test() {
+                let response = await fetch('https://academyit.ru')
+                
+                console.log(response.headers.get('Content-Type'));
+
+                for (let [key, value] of response.headers) {
+                    console.log(key + "=" + value);
+                }
+            }
+
+            test();
+        </script>
+    </body>
+</html>
